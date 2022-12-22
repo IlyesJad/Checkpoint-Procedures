@@ -1,0 +1,34 @@
+PROCEDURE scalar_product(V1,V2:ARRAY_OF FLOAT, VAR ps: FLOAT)
+VAR
+i:INTEGER
+BEGIN
+ps:=0;
+i:=0;
+FOR i FROM 0 TO n-1 STEP 1  DO
+  ps:=ps+(V1[i]*V2[i])
+END
+
+
+ALGORITHM Dot_product
+VAR 
+V1,V2:ARRAY_OF FLOAT[50];
+i,n:INTEGER;
+BEGIN
+   Write("give the dimension of V1 and V2"); 
+   read(n);
+   FOR i FROM 0 TO n-1 STEP 1  DO
+        Write(V1[i])
+        Read(V1[i]);
+    END_FOR
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Write(V2[i])
+        Read(V2[i]);
+    END_FOR
+   scalar_product(V1,V2,ps)
+   Write(ps)
+        IF (ps=0) THEN
+            Write("The two vectors are orthogonal") 
+        ELSE
+            Write("The two vectors are not orthogonal") ;
+        END IF;
+END
